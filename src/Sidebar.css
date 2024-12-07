@@ -122,10 +122,6 @@
   background-color: #34495e;
 }
 
-/* .dropdown-icon {
-  margin-left: auto;
-  font-size: 16px !important; 
-} */
 .dot {
   display: inline-block;
   width: 8px;
@@ -133,22 +129,43 @@
   background-color: white;
   border-radius: 50%;
   margin-left: 20px;
-  }
+}
 
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .sidebar {
-    transform: translateX(-100%);
+    width: 100%;  /* Sidebar should take full width on smaller screens */
+    transform: translateX(-100%); /* Initially hidden */
+    position: fixed;
   }
 
   .sidebar.open {
-    transform: translateX(0);
+    transform: translateX(0); /* Show sidebar when it's open */
+  }
+
+  .sidebar .brand h2 {
+    font-size: 18px; /* Adjust brand text size for mobile */
+  }
+
+  .sidebar ul li a,
+  .sidebar ul li > button {
+    padding: 10px 15px; /* Reduce padding on smaller screens */
   }
 
   .toggle-button {
     display: block;
+    top: 10px; /* Adjust toggle button position */
+    left: 10px;
+    font-size: 24px; /* Larger font for toggle button */
   }
 
   .main {
-    margin-left: 0;
+    margin-left: 0; /* Remove left margin for main content */
+  }
+
+  /* Optional: Adjust submenu items for smaller screens */
+  .sidebar .submenu li a {
+    padding: 8px 15px;
+    font-size: 12px;
   }
 }

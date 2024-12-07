@@ -40,7 +40,6 @@ const Sidebar = () => {
           <li>
             <button onClick={() => toggleExpand('features')}>
               <i className="fas fa-list-alt"></i> Features
-              {/* <i className={`fas fa-chevron-${expanded === 'user-flow' ? 'up' : 'down'} dropdown-icon`}></i> */}
               <span className={`dot ${expanded === 'features' ? 'expanded' : ''}`}></span>
             </button>
             {expanded === 'features' && (
