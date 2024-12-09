@@ -1,0 +1,42 @@
+.flight-documentation {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  .flight-documentation h1 {
+    color: #2c3e50; /* Darker shade for main headings */
+  }
+  
+  .flight-documentation h2 {
+    color: #34495e; /* Medium-dark shade for secondary headings */
+    margin-top: 20px;
+  }
+  
+  .flight-documentation h3 {
+    color: #7f8c8d; /* Lighter shade for sub-headings */
+    margin-top: 15px;
+  }
+  
+  .flight-documentation p {
+    margin: 10px 0;
+  }
+  
+  .flight-documentation ul {
+    margin: 10px 0 10px 20px; /* Adds indentation for list items */
+    padding: 0;
+  }
+  
+  .flight-documentation ul li {
+    margin: 5px 0;
+  }
+  
+  .flight-documentation a {
+    color: #3498db; /* Blue for hyperlinks */
+    text-decoration: none;
+  }
+  
+  .flight-documentation a:hover {
+    text-decoration: underline;
+  }
+  

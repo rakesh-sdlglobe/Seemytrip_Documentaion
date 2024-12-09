@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div>
       <button className="toggle-button" onClick={toggleSidebar}>
-        <i className="fas fa-bars"></i>
+        <i className={isSidebarOpen ? "fas fa-times" : "fas fa-bars"}></i>
       </button>
       <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="brand">
@@ -45,6 +45,11 @@ const Sidebar = () => {
             {expanded === 'features' && (
               <ul className="submenu">
                 <li>
+                  <Link to="/features/train-booking">
+                    <i className="fas fa-train"></i> Train Booking
+                  </Link>
+                </li>
+                <li>
                   <Link to="/features/flight-booking">
                     <i className="fas fa-plane"></i> Flight Booking
                   </Link>
@@ -55,18 +60,33 @@ const Sidebar = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/features/cabs-booking">
+                    <i className="fas fa-car"></i> Cabs Booking
+                  </Link>
+                </li>
+                {/* <li>
                   <Link to="/features/holiday-packages">
                     <i className="fas fa-suitcase"></i> Holiday Packages
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/features/car-rental">
-                    <i className="fas fa-car"></i> Car Rental, Bus, and Train Booking
+                    <i className="fas fa-ship"></i> Cruise Booking
                   </Link>
                 </li>
                 <li>
                   <Link to="/features/visa-insurance">
-                    <i className="fas fa-passport"></i> Visa and Travel Insurance
+                    <i className="fas fa-bus"></i> Bus Booking
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/features/visa-insurance">
+                    <i className="fas fa-bus"></i> Business Tourism
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/features/visa-insurance">
+                    <i className="fas fa-heartbeat"></i> Health Tourism
                   </Link>
                 </li>
                 <li>

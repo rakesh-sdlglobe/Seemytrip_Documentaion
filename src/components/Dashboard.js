@@ -1,6 +1,61 @@
 import React from 'react';
+import '../Dashboard.css';
+import CodeBlock from '../pages/CodeBlock';
 
 const Dashboard = () => {
+  const javaCode = `
+  public class variableType {
+    public void localVariable() {
+      String name = "Ben";
+      int marks = 95;
+      System.out.println(name + " Scored " + marks + "%.");
+    }
+  
+    public static void main(String[] args) {
+      variableType vt = new variableType();
+      vt.localVariable();
+    }
+  }
+    `;
+  
+  const pythonCode = `
+  def greet(name):
+    print(f"Hello {name}")
+    
+  greet("Ben")
+`;
+
+  const reactCode = `
+import React, { useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const CodeBlock = ({ language, code }) => {
+  const [copied, setCopied] = useState(false);
+
+  const copyCode = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+  };
+
+  return (
+    <div className="code-container">
+      <div className="copy-button">
+        <button onClick={copyCode}>
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+      <SyntaxHighlighter language={language} style={solarizedlight}>
+        {code}
+      </SyntaxHighlighter>
+    </div>
+  );
+};
+
+export default CodeBlock;
+  `;
+
   return (
     <div className="content">
       <h2>Welcome to SeeMyTrip</h2>
@@ -47,6 +102,9 @@ const Dashboard = () => {
           <li><strong>Styling:</strong> Bootstrap for responsive and professional designs.</li>
         </ul>
       </div>
+      {/* <CodeBlock language="java" code={javaCode} />
+      <CodeBlock language="python" code={pythonCode} />
+      <CodeBlock language="javascript" code={reactCode} /> */}
     </div>
   );
 };

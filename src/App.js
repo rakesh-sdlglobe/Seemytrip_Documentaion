@@ -13,6 +13,10 @@ import SecurityPrivacy from './pages/SecurityPrivacy';
 import TechnicalSpecifications from './pages/TechnicalSpecifications';
 import Troubleshooting from './pages/Troubleshooting';
 import Appendix from './pages/Appendix';
+import TrainSection from './Features/TrainBooking';
+import FlightSection from './Features/FlightBooking';
+import HotelSection from './Features/HotelBooking';
+import CabSection from './Features/CabBooking';
 import './App.css';
 
 const App = () => {
@@ -34,6 +38,11 @@ const App = () => {
               <Route path="/technical-specifications" element={<TechnicalSpecifications />} />
               <Route path="/troubleshooting" element={<Troubleshooting />} />
               <Route path="/appendix" element={<Appendix />} />
+              <Route path="/features/train-booking" element={<TrainSection />} />
+              <Route path="/features/flight-booking" element={<FlightSection />} />
+              <Route path="/features/hotel-booking" element={<HotelSection />} />
+              <Route path="/features/cabs-booking" element={<CabSection />} />
+
             </Routes>
           </div>
         </div>
