@@ -1,0 +1,184 @@
+/* Global container for the pricing plans section */
+#pricing-plans-container {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 30px 20px;
+    /* background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; */
+}
+
+/* Title and description */
+#pricing-plans-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2f3b52;
+    margin-bottom: 20px;
+}
+
+#pricing-plans-container p {
+    font-size: 1.2rem;
+    color: #676f7b;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Wrapper for pricing plans */
+#pricing-plans {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+/* Plan Card Styles */
+.plan-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    width: 290px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #e1e4e8;
+    margin-bottom: 30px;
+}
+
+.plan-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: #2f3b52;
+}
+
+/* Card Title */
+.plan-card h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2f3b52;
+    margin-bottom: 20px;
+}
+
+/* Pricing Section */
+.plan-card .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+/* Plan Description */
+.plan-card .plan-description {
+    font-size: 1.1rem;
+    color: #676f7b;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Plan Features */
+.plan-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.plan-card ul li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* Button Styles */
+.plan-card .btn-signup {
+    background-color: #2f3b52;
+    color: #fff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.plan-card .btn-signup:hover {
+    background-color: #1e2a39;
+    transform: scale(1.05);
+}
+
+/* Custom Plan Section */
+#custom-plans-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px solid #e1e4e8;
+    /* text-align: center; */
+}
+
+#custom-plans-section h2 {
+    font-size: 1.9rem;
+    color: #2f3b52;
+    margin-bottom: 15px;
+}
+
+#custom-plans-section p {
+    font-size: 1.2rem;
+    color: #676f7b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Contact Button */
+#custom-plans-section .btn-contact {
+    background-color: #2f3b52;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+#custom-plans-section .btn-contact:hover {
+    background-color: #1e2a39;
+}
+
+/* Why Choose Us Section */
+#why-choose-us-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 2px solid #e1e4e8;
+    /* text-align: center; */
+}
+
+#why-choose-us-section h2 {
+    font-size: 1.7rem;
+    color: #2f3b52;
+    margin-bottom: 1px;
+}
+
+#why-choose-us-section p {
+    font-size: 1.2rem;
+    color: #676f7b;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+#why-choose-us-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+#why-choose-us-section ul li {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+#why-choose-us-section ul li strong {
+    color: #2f3b52;
+}

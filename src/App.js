@@ -17,6 +17,21 @@ import TrainSection from './Features/TrainBooking';
 import FlightSection from './Features/FlightBooking';
 import HotelSection from './Features/HotelBooking';
 import CabSection from './Features/CabBooking';
+import CruiseSection from './Features/CruiseBooking';
+import BusSection from './Features/BusBooking';
+import BusinessTourism from './Features/BusinessTourism';
+import HealthTourism from './Features/HealthTourism';
+import SupportChannel from './CustomerSupport/SupportChannel';
+import FAQSection from './CustomerSupport/FAQSection';
+import Availability from './CustomerSupport/Availability';
+import SystemRequirements from './TechnicalSpecifications/SystemRequirements';
+import ApiIntegration from './TechnicalSpecifications/ApiIntegration';
+import DataSecurityPrivacy from './TechnicalSpecifications/DataSecurityPrivacy';
+import RegistrationAccountManagement  from './UserFlow/RegistrationAccountManagement';
+import SearchFilterOptions  from './UserFlow/SearchFilterOptions';
+import BookingProcess  from './UserFlow/BookingProcess';
+import PaymentMethod  from './UserFlow/PaymentMethod';
+import BookingConfirmation   from './UserFlow/BookingConfirmation';
 import './App.css';
 
 const App = () => {
@@ -32,7 +47,9 @@ const App = () => {
               <Route path="/features" element={<Features />} />
               <Route path="/user-flow" element={<UserFlow />} />
               <Route path="/customer-support" element={<CustomerSupport />} />
+
               <Route path="/pricing-plans" element={<PricingPlans />} />
+
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/security-privacy" element={<SecurityPrivacy />} />
               <Route path="/technical-specifications" element={<TechnicalSpecifications />} />
@@ -42,6 +59,23 @@ const App = () => {
               <Route path="/features/flight-booking" element={<FlightSection />} />
               <Route path="/features/hotel-booking" element={<HotelSection />} />
               <Route path="/features/cabs-booking" element={<CabSection />} />
+              <Route path="/features/cruise-booking" element={<CruiseSection />} />
+              <Route path="/features/bus-booking" element={<BusSection />} />
+              <Route path="/features/business_tourism" element={<BusinessTourism />} />
+              <Route path="/features/health_tourism" element={<HealthTourism />} />
+              <Route path="/channels/customer-support" element={<SupportChannel />} />
+              <Route path="/faq/customer-support" element={<FAQSection />} />
+              <Route path="/availability/customer-support" element={<Availability />} />
+              
+              <Route path="/requirements/technical-specifications" element={<SystemRequirements />} />
+              <Route path="/apis/technical-specifications" element={<ApiIntegration />} />
+              <Route path="/security/technical-specifications" element={<DataSecurityPrivacy />} />
+             
+              <Route path="/user-flow/registration" element={<RegistrationAccountManagement />} />
+              <Route path="/user-flow/search" element={<SearchFilterOptions />} />
+              <Route path="/user-flow/booking" element={<BookingProcess />} />
+              <Route path="/user-flow/payment" element={<PaymentMethod />} />
+              <Route path="/user-flow/confirmation" element={<BookingConfirmation  />} />
 
             </Routes>
           </div>

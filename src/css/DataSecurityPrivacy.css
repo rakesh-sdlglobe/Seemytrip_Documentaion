@@ -1,0 +1,50 @@
+.data-security-privacy-container {
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    /* margin: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .data-security-privacy-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  .data-security-privacy-container h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .data-security-privacy-container p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .data-security-privacy-container ul, 
+  .data-security-privacy-container ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .data-security-privacy-container ul li,
+  .data-security-privacy-container ol li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .data-security-privacy-container a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  
+  .data-security-privacy-container a:hover {
+    text-decoration: underline;
+  }
+  

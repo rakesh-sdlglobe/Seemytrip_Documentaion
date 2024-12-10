@@ -1,0 +1,45 @@
+.appendix-container {
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    /* background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .appendix-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .appendix-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .section ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .section li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .section li strong {
+    color: #2c3e50;
+  }
+  

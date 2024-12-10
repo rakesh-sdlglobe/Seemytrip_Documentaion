@@ -1,0 +1,48 @@
+.support-channel-container {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    padding: 10px;
+    /* margin: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .support-channel-container h1 {
+    font-size: 2rem;
+    color: #2a4d69;
+    /* text-align: center; */
+    margin-bottom: 15px;
+  }
+  
+  .support-channel-container h2 {
+    font-size: 1.4rem;
+    color: #3b6978;
+    margin-top: 20px;
+  }
+  
+  .support-channel-container ul,
+  .support-channel-container ol {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  
+  .support-channel-container ul li,
+  .support-channel-container ol li {
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .support-channel-container p {
+    color: #333;
+  }
+  
+  .support-channel-container a {
+    color: #31708e;
+    text-decoration: none;
+  }
+  
+  .support-channel-container a:hover {
+    text-decoration: underline;
+  }
+  

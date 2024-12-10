@@ -1,0 +1,55 @@
+.troubleshooting-container {
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    /* background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; */
+  }
+  
+  .troubleshooting-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .troubleshooting-container p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .issue-section {
+    margin-bottom: 20px;
+  }
+  
+  .issue-section h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .issue-section ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .issue-section li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .contact-section {
+    margin-top: 30px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-section p {
+    color: #333;
+  }
+  
+  .contact-section strong {
+    color: #2c3e50;
+  }
+  

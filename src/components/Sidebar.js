@@ -70,22 +70,22 @@ const Sidebar = () => {
                   </Link>
                 </li> */}
                 <li>
-                  <Link to="/features/car-rental">
+                  <Link to="/features/cruise-booking">
                     <i className="fas fa-ship"></i> Cruise Booking
                   </Link>
                 </li>
                 <li>
-                  <Link to="/features/visa-insurance">
+                  <Link to="/features/bus-booking">
                     <i className="fas fa-bus"></i> Bus Booking
                   </Link>
                 </li>
                 <li>
-                  <Link to="/features/visa-insurance">
-                    <i className="fas fa-bus"></i> Business Tourism
+                  <Link to="/features/business_tourism">
+                    <i className="fas fa-briefcase"></i> Business Tourism
                   </Link>
                 </li>
                 <li>
-                  <Link to="/features/visa-insurance">
+                  <Link to="/features/health_tourism">
                     <i className="fas fa-heartbeat"></i> Health Tourism
                   </Link>
                 </li>
@@ -144,17 +144,17 @@ const Sidebar = () => {
             {expanded === 'customer-support' && (
               <ul className="submenu">
                 <li>
-                  <Link to="/customer-support/channels">
+                  <Link to="/channels/customer-support">
                     <i className="fas fa-phone"></i> Support Channels
                   </Link>
                 </li>
                 <li>
-                  <Link to="/customer-support/faq">
+                  <Link to="/faq/customer-support">
                     <i className="fas fa-question-circle"></i> FAQ Section
                   </Link>
                 </li>
                 <li>
-                  <Link to="/customer-support/availability">
+                  <Link to="/availability/customer-support">
                     <i className="fas fa-clock"></i> 24/7 Availability
                   </Link>
                 </li>
@@ -171,17 +171,17 @@ const Sidebar = () => {
             {expanded === 'technical-specifications' && (
               <ul className="submenu">
                 <li>
-                  <Link to="/technical-specifications/requirements">
+                  <Link to="/requirements/technical-specifications">
                     <i className="fas fa-desktop"></i> System Requirements
                   </Link>
                 </li>
                 <li>
-                  <Link to="/technical-specifications/apis">
+                  <Link to="/apis/technical-specifications">
                     <i className="fas fa-plug"></i> APIs and Integrations
                   </Link>
                 </li>
                 <li>
-                  <Link to="/technical-specifications/security">
+                  <Link to="/security/technical-specifications">
                     <i className="fas fa-shield-alt"></i> Data Security and Privacy
                   </Link>
                 </li>

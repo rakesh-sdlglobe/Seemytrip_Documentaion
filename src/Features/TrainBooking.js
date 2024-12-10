@@ -1,41 +1,28 @@
 import React from "react";
-import '../css/Trainbooking.css';
-import CodeBlock from '../pages/CodeBlock';
+import "../css/Trainbooking.css";
+import CodeBlock from "../pages/CodeBlock";
 
 const TrainSectionDocumentation = () => {
-
-const reactCode = `
+  const sampleCode = `
 import React, { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const CodeBlock = ({ language, code }) => {
-  const [copied, setCopied] = useState(false);
-
-  const copyCode = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
-  };
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
   return (
-    <div className="code-container">
-      <div className="copy-button">
-        <button onClick={copyCode}>
-          {copied ? 'Copied!' : 'Copy'}
-        </button>
-      </div>
-      <SyntaxHighlighter language={language} style={solarizedlight}>
-        {code}
-      </SyntaxHighlighter>
+    <div>
+      <p>Current Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
     </div>
   );
 };
 
-export default CodeBlock;
+export default Counter;
   `;
+
   return (
-    <div className="documentation-container">
+    <div className="train-container">
       <h1>Train Section Documentation</h1>
 
       {/* Introduction */}
@@ -53,8 +40,6 @@ export default CodeBlock;
       {/* User Guide */}
       <section>
         <h2>User Guide</h2>
-
-        {/* Accessing the Train Section */}
         <h3>Accessing the Train Section</h3>
         <p>
           Users can navigate to the Train Section from the homepage by clicking
@@ -64,14 +49,12 @@ export default CodeBlock;
           <strong>Example:</strong>
           <br />
           <img
-            src="/static/images/train-navigation.png"
+            src="https://via.placeholder.com/800x400.png?text=Train+Section+Navigation+Example"
             alt="Train Section Navigation"
             style={{ maxWidth: "100%", height: "auto" }}
           />
         </p>
-        {/* <CodeBlock language="javascript" code={reactCode} /> */}
 
-        {/* Searching for Trains */}
         <h3>Searching for Trains</h3>
         <ol>
           <li>
@@ -88,40 +71,20 @@ export default CodeBlock;
             (e.g., Sleeper, AC, General) and coach.
           </li>
         </ol>
+        <img
+          src="https://via.placeholder.com/800x400.png?text=Train+Search+Example"
+          alt="Train Search Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
+      </section>
 
-        {/* Booking Tickets */}
-        <h3>Booking Tickets</h3>
-        <ol>
-          <li>
-            <strong>Passenger Information:</strong> Provide passenger details,
-            including name, age, and ID proof.
-          </li>
-          <li>
-            <strong>Seat Selection:</strong> If available, choose seats from the
-            seat map.
-          </li>
-          <li>
-            <strong>Payment:</strong> Make payment using credit card, debit
-            card, or net banking.
-          </li>
-          <li>
-            <strong>Confirmation:</strong> Receive booking confirmation via
-            email or SMS.
-          </li>
-        </ol>
-
-        {/* Managing Bookings */}
-        <h3>Managing Bookings</h3>
-        <ul>
-          <li>
-            <strong>View Bookings:</strong> View existing bookings with filters
-            like upcoming trips or past trips.
-          </li>
-          <li>
-            <strong>Cancel or Modify Bookings:</strong> Cancel or modify a
-            booking with applicable fees and policies.
-          </li>
-        </ul>
+      {/* Code Snippet Example */}
+      <section>
+        <h2>Code Snippet Example</h2>
+        <p>
+          Below is an example code snippet for a React component that implements a simple counter:
+        </p>
+        <CodeBlock language="javascript" code={sampleCode} />
       </section>
 
       {/* Technical Specifications */}
@@ -140,34 +103,11 @@ export default CodeBlock;
             gateways.
           </li>
         </ul>
-      </section>
-
-      {/* API Documentation */}
-      <section>
-        <h2>API Documentation</h2>
-        <ul>
-          <li>
-            <strong>Endpoints:</strong> 
-            <ul>
-              <li>
-                <code>GET /api/trains</code> - Fetch train schedules.
-              </li>
-              <li>
-                <code>POST /api/bookings</code> - Create a new booking.
-              </li>
-              <li>
-                <code>GET /api/bookings/:id</code> - Fetch booking details.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Request/Response Format:</strong> JSON
-          </li>
-          <li>
-            <strong>Authentication:</strong> Use a token-based authentication
-            system.
-          </li>
-        </ul>
+        <img
+          src="https://via.placeholder.com/800x400.png?text=System+Requirements+Example"
+          alt="System Requirements Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
       {/* Troubleshooting */}
@@ -211,6 +151,11 @@ export default CodeBlock;
             <li>Live Chat: Available on the website</li>
           </ul>
         </p>
+        <img
+          src="https://via.placeholder.com/800x400.png?text=Contact+Information+Example"
+          alt="Contact Information Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
     </div>
   );

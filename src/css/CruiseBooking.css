@@ -1,0 +1,42 @@
+.cruise-booking-doc {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    padding: 10px;
+    /* margin: 20px;
+    background-color: #eef6f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .cruise-booking-doc h1 {
+    font-size: 2rem;
+    color: #2b6777;
+    margin-bottom: 20px;
+  }
+  
+  .cruise-booking-doc h2 {
+    font-size: 1.8rem;
+    color: #2d4059;
+    margin-top: 20px;
+  }
+  
+  .cruise-booking-doc h3,
+  .cruise-booking-doc h4 {
+    font-size: 1.4rem;
+    color: #497285;
+  }
+  
+  .cruise-booking-doc ul,
+  .cruise-booking-doc ol {
+    margin-left: 25px;
+  }
+  
+  .cruise-booking-doc ul li,
+  .cruise-booking-doc ol li {
+    margin: 8px 0;
+  }
+  
+  .cruise-booking-doc p {
+    color: #3d6e8c;
+  }
+  

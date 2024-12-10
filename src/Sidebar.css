@@ -67,7 +67,7 @@
 }
 
 .sidebar ul li a.active {
-  background-color: #2980b9;
+  background-color: #316eab;
 }
 
 .sidebar ul li a.active i {
@@ -101,7 +101,7 @@
 }
 
 .sidebar .submenu li a:hover {
-  background-color: #3b5998;
+  background-color: #34495e;
 }
 
 .toggle-button {

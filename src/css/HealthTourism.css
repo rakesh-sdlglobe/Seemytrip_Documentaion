@@ -1,0 +1,42 @@
+.health-tourism-doc {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    padding: 10px;
+    /* margin: 20px;
+    background-color: #eef6f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .health-tourism-doc h1 {
+    font-size: 2rem;
+    color: #2b6777;
+    margin-bottom: 20px;
+  }
+  
+  .health-tourism-doc h2 {
+    font-size: 1.8rem;
+    color: #2d4059;
+    margin-top: 20px;
+  }
+  
+  .health-tourism-doc h3,
+  .health-tourism-doc h4 {
+    font-size: 1.4rem;
+    color: #497285;
+  }
+  
+  .health-tourism-doc ul,
+  .health-tourism-doc ol {
+    margin-left: 25px;
+  }
+  
+  .health-tourism-doc ul li,
+  .health-tourism-doc ol li {
+    margin: 8px 0;
+  }
+  
+  .health-tourism-doc p {
+    color: #3d6e8c;
+  }
+  

@@ -1,0 +1,49 @@
+.booking-process-container {
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    /* margin: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .booking-process-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    /* text-align: center; */
+    margin-bottom: 30px;
+  }
+  
+  .booking-process-container h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .booking-process-container p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .booking-process-container ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .booking-process-container ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .booking-process-container a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  
+  .booking-process-container a:hover {
+    text-decoration: underline;
+  }
+  
