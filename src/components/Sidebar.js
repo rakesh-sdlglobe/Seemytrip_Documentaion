@@ -89,11 +89,11 @@ const Sidebar = () => {
                     <i className="fas fa-heartbeat"></i> Health Tourism
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/features/mobile-app">
                     <i className="fas fa-mobile-alt"></i> Mobile App Features
                   </Link>
-                </li>
+                </li> */}
               </ul>
             )}
           </li>
