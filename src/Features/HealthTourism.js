@@ -4,8 +4,8 @@ import CodeBlock from '../pages/CodeBlock';
 
 // Import images
 import HealthTourismImage from '../images/Features/health_tourism_overview.png';
-import TypesImage from '../images/Features/health_tourism_overview.png';
-import FacilitiesImage from '../images/Features/health_tourism_overview.png';
+import TypesImage from '../images/Features/types_image.png';
+import FacilitiesImage from '../images/Features/facilities_image.png';
 import TrendsImage from '../images/Features/health_tourism_overview.png';
 import PlanningImage from '../images/Features/health_tourism_overview.png';
 
@@ -128,11 +128,11 @@ const HealthTourism = () => {
             <strong>Customized Treatment Plans:</strong> Tailored healthcare experiences based on individual needs.
           </li>
         </ul>
-        <img
+        {/* <img
           src={TrendsImage}
           alt="Health Tourism Trends"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
-        />
+        /> */}
         <h4>Example of Health Tourism Trends:</h4>
         <CodeBlock language="json" code={trendsExample} />
       </section>
@@ -186,11 +186,11 @@ const HealthTourism = () => {
             <strong>Travel Arrangements:</strong> Ensure proper documentation, visas, and travel insurance.
           </li>
         </ol>
-        <img
+        {/* <img
           src={PlanningImage}
           alt="Planning Health Tourism"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
-        />
+        /> */}
       </section>
 
       {/* Future of Health Tourism */}

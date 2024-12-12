@@ -4,8 +4,8 @@ import CodeBlock from '../pages/CodeBlock';
 
 // Import images
 import BusinessTourismImage from '../images/Features/business_tourism_overview.png';
-import KeyAspectsImage from '../images/Features/business_tourism_overview.png';
-import FacilitiesImage from '../images/Features/business_tourism_overview.png';
+import KeyAspectsImage from '../images/Features/KeyAspects_image.png';
+import FacilitiesImage from '../images/Features/facilities_image.png';
 import TrendsImage from '../images/Features/business_tourism_overview.png';
 import PlanningImage from '../images/Features/business_tourism_overview.png';
 
@@ -97,11 +97,11 @@ const BusinessTourism = () => {
           <li><strong>Digitalization:</strong> Virtual and hybrid event platforms are reducing the need for physical travel while increasing accessibility.</li>
           <li><strong>Customized Experiences:</strong> Tailor-made experiences for team-building and client engagement.</li>
         </ul>
-        <img
+        {/* <img
           src={TrendsImage}
           alt="Business Tourism Trends"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
-        />
+        /> */}
         <h4>Example of Business Tourism Trends:</h4>
         <CodeBlock language="json" code={trendsExample} />
       </section>
@@ -125,11 +125,11 @@ const BusinessTourism = () => {
           <li><strong>Logistics Management:</strong> Arrange transportation, accommodations, and itineraries in advance.</li>
           <li><strong>Safety Measures:</strong> Ensure travel insurance and follow local COVID-19 protocols if applicable.</li>
         </ol>
-        <img
+        {/* <img
           src={PlanningImage}
           alt="Planning Business Tourism"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
-        />
+        /> */}
       </section>
 
       {/* Future of Business Tourism */}

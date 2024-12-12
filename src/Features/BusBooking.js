@@ -14,8 +14,8 @@ const BusBooking = () => {
   const apiExample = `
 GET /api/buses
 {
-  "pickup_location": "Los Angeles",
-  "dropoff_location": "San Francisco",
+  "pickup_location": "Bengaluru Airport",
+  "dropoff_location": "Hydrabad",
   "travel_date": "2024-12-25",
   "passengers": 3
 }
@@ -23,9 +23,9 @@ GET /api/buses
 POST /api/bookings
 {
   "bus_id": 205,
-  "passenger_name": "Jane Smith",
+  "passenger_name": "Subhash Singh",
   "phone": "555-789-1234",
-  "payment_method": "digital_wallet",
+  "payment_method": "UPI",
   "seat_numbers": ["A1", "A2"]
 }
 `;
