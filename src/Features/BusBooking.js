@@ -1,11 +1,40 @@
 import React from 'react';
 import '../css/BusBooking.css';
+import CodeBlock from '../pages/CodeBlock';
+
+// Import images
+import BusNavigationImage from '../images/Features/bus_navigation.png';
+import BusSearchImage from '../images/Features/BusSearch_image.png';
+import BusBookingImage from '../images/Features/busbooking_image.png';
+import BusPassengerImage from '../images/Features/BusPassanger_image.png';
+import SystemRequirementsImage from '../images/Features/bus_navigation.png';
+import ContactInformationImage from '../images/Features/bus_navigation.png';
 
 const BusBooking = () => {
+  const apiExample = `
+GET /api/buses
+{
+  "pickup_location": "Los Angeles",
+  "dropoff_location": "San Francisco",
+  "travel_date": "2024-12-25",
+  "passengers": 3
+}
+
+POST /api/bookings
+{
+  "bus_id": 205,
+  "passenger_name": "Jane Smith",
+  "phone": "555-789-1234",
+  "payment_method": "digital_wallet",
+  "seat_numbers": ["A1", "A2"]
+}
+`;
+
   return (
     <div className="bus-booking-doc">
       <h1>Bus Booking Documentation</h1>
 
+      {/* Introduction */}
       <section>
         <h2>Introduction</h2>
         <p>
@@ -20,8 +49,14 @@ const BusBooking = () => {
           <li><strong>Payment Integration:</strong> Secure and seamless payment options.</li>
           <li><strong>Booking Confirmation:</strong> Receive confirmation via email or SMS.</li>
         </ul>
+        <img
+          src={BusNavigationImage}
+          alt="Bus Navigation Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* User Guide */}
       <section>
         <h2>User Guide</h2>
         <h3>Accessing the Bus Booking Section</h3>
@@ -46,8 +81,14 @@ const BusBooking = () => {
 
         <h4>Step 3: Select Seats</h4>
         <p>Choose your preferred seats based on availability and preferences (e.g., window or aisle seats).</p>
+        <img
+          src={BusSearchImage}
+          alt="Bus Search Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* Booking Buses */}
       <section>
         <h2>Booking Buses</h2>
         <h4>Step 1: Provide Passenger Information</h4>
@@ -57,6 +98,11 @@ const BusBooking = () => {
           <li><strong>Phone Number</strong></li>
           <li><strong>Special Requests (Optional)</strong></li>
         </ul>
+        <img
+          src={BusPassengerImage}
+          alt="Bus Search Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
 
         <h4>Step 2: Review Booking Details</h4>
         <p>Verify your travel details, including seat number, bus operator, and total fare.</p>
@@ -68,10 +114,17 @@ const BusBooking = () => {
         <p>Receive confirmation via email or SMS with booking details and seat numbers.</p>
       </section>
 
+      {/* Managing Bookings */}
       <section>
         <h2>Managing Bookings</h2>
         <h4>View Bookings</h4>
         <p>Users can view their current bookings in the “My Bookings” section.</p>
+
+        <img
+          src={BusBookingImage}
+          alt="Bus Search Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
 
         <h4>Cancel or Modify Bookings</h4>
         <p>Bookings can be canceled or modified based on the cancellation policies.</p>
@@ -83,6 +136,7 @@ const BusBooking = () => {
         </ul>
       </section>
 
+      {/* Technical Specifications */}
       <section>
         <h2>Technical Specifications</h2>
         <h3>Supported Browsers</h3>
@@ -104,36 +158,21 @@ const BusBooking = () => {
           <li><strong>Payment Gateway:</strong> Integrated with Stripe and PayPal.</li>
           <li><strong>Bus Availability:</strong> Real-time availability fetched from third-party services.</li>
         </ul>
+        {/* <img
+          src={SystemRequirementsImage}
+          alt="System Requirements Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        /> */}
       </section>
 
+      {/* API Documentation */}
       <section>
         <h2>API Documentation (For Developers)</h2>
-        <h4>GET /api/buses</h4>
-        <pre>
-          <code>
-            {JSON.stringify({
-              "pickup_location": "Los Angeles",
-              "dropoff_location": "San Francisco",
-              "travel_date": "2024-12-25",
-              "passengers": 3
-            })}
-          </code>
-        </pre>
-
-        <h4>POST /api/bookings</h4>
-        <pre>
-          <code>
-            {JSON.stringify({
-              "bus_id": 205,
-              "passenger_name": "Jane Smith",
-              "phone": "555-789-1234",
-              "payment_method": "digital_wallet",
-              "seat_numbers": ["A1", "A2"]
-            })}
-          </code>
-        </pre>
+        <p>Here are the API endpoints used for bus bookings:</p>
+        <CodeBlock language="json" code={apiExample} />
       </section>
 
+      {/* Troubleshooting */}
       <section>
         <h2>Troubleshooting</h2>
         <ul>
@@ -142,18 +181,23 @@ const BusBooking = () => {
         </ul>
       </section>
 
+      {/* FAQs */}
       <section>
         <h2>FAQs</h2>
-        <h4>Q1: How do I cancel my bus booking?</h4>
-        <p>Go to the “My Bookings” section to cancel your booking.</p>
-
-        <h4>Q2: Can I choose specific seats?</h4>
-        <p>Yes, seat selection is available during the booking process.</p>
-
-        <h4>Q3: Will I get a refund if I cancel my booking?</h4>
-        <p>Refunds depend on the cancellation policy of the bus operator.</p>
+        <ul>
+          <li><strong>Q1:</strong> How do I cancel my bus booking?<br />
+            <strong>A:</strong> Go to the “My Bookings” section to cancel your booking.
+          </li>
+          <li><strong>Q2:</strong> Can I choose specific seats?<br />
+            <strong>A:</strong> Yes, seat selection is available during the booking process.
+          </li>
+          <li><strong>Q3:</strong> Will I get a refund if I cancel my booking?<br />
+            <strong>A:</strong> Refunds depend on the cancellation policy of the bus operator.
+          </li>
+        </ul>
       </section>
 
+      {/* Contact Information */}
       <section>
         <h2>Contact Information</h2>
         <p><strong>Customer Support:</strong></p>
@@ -162,6 +206,11 @@ const BusBooking = () => {
           <li><strong>Email:</strong> support@busbooking.com</li>
           <li><strong>Live Chat:</strong> Available on the website</li>
         </ul>
+        {/* <img
+          src={ContactInformationImage}
+          alt="Contact Information Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        /> */}
       </section>
     </div>
   );

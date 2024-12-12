@@ -1,167 +1,206 @@
-import React from 'react';
-import '../css/HotelBooking.css';
+import React from "react";
+import "../css/HotelBooking.css";
+import CodeBlock from "../pages/CodeBlock";
+
+// Import local images
+import HotelNavigationImage from "../images/Features/hotel_navigation.png";
+import HotelSearchImage from "../images/Features/hotelsearch_image.png";
+import SystemRequirementsImage from "../images/Features/hotel_navigation.png";
+import ContactInformationImage from "../images/Features/hotel_navigation.png";
 
 const HotelBooking = () => {
+  const sampleCode = `
+import React, { useState } from 'react';
+
+const BookingForm = () => {
+  const [guestName, setGuestName] = useState("");
+  const [email, setEmail] = useState("");
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(\`Booking for \${guestName} submitted!\`);
+  };
+
   return (
-    <div className="hotel-booking-doc">
+    <form onSubmit={handleSubmit}>
+      <label>
+        Guest Name:
+        <input 
+          type="text" 
+          value={guestName} 
+          onChange={(e) => setGuestName(e.target.value)} 
+        />
+      </label>
+      <label>
+        Email:
+        <input 
+          type="email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        />
+      </label>
+      <label>
+        Check-In Date:
+        <input 
+          type="date" 
+          value={checkInDate} 
+          onChange={(e) => setCheckInDate(e.target.value)} 
+        />
+      </label>
+      <label>
+        Check-Out Date:
+        <input 
+          type="date" 
+          value={checkOutDate} 
+          onChange={(e) => setCheckOutDate(e.target.value)} 
+        />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default BookingForm;
+  `;
+
+  return (
+    <div className="hotel-container">
       <h1>Hotel Booking Documentation</h1>
 
+      {/* Introduction */}
       <section>
         <h2>Introduction</h2>
         <p>
-          The <strong>Hotel Booking</strong> section allows users to search for, book, and manage their hotel reservations.
-          Users can find available hotels, select room types, and complete bookings. Additionally, they can modify or cancel bookings.
+          The <strong>Hotel Booking</strong> section allows users to search for, book, and manage their hotel reservations. This platform simplifies the process of finding accommodations, enabling users to input their travel preferences, view available rooms, select the right accommodations, and finalize bookings. Additionally, the system supports modifying or canceling bookings and making payment securely, all through an intuitive user interface.
         </p>
-        <h3>Main Features:</h3>
-        <ul>
-          <li><strong>Search Hotels:</strong> Search for hotels by location, dates, and guests.</li>
-          <li><strong>Room Selection:</strong> Choose room types with pricing information.</li>
-          <li><strong>Booking Management:</strong> Book, modify, and cancel hotel bookings.</li>
-          <li><strong>Payment Integration:</strong> Secure payment gateway.</li>
-          <li><strong>Booking Confirmation:</strong> Receive confirmation via email or SMS.</li>
-        </ul>
+        <p>
+          Whether traveling for business or leisure, this platform provides a seamless and efficient experience for hotel bookings. The system ensures that users can book with ease, access detailed hotel information, and manage their stays effectively.
+        </p>
       </section>
 
+      {/* User Guide */}
       <section>
         <h2>User Guide</h2>
+        
         <h3>Accessing the Hotel Booking Section</h3>
-        <p>To access the Hotel Booking section:</p>
-        <ol>
-          <li>Go to the homepage.</li>
-          <li>Click on the “Hotel Booking” option in the navigation menu.</li>
-          <li>You will be redirected to the hotel booking page.</li>
-        </ol>
+        <p>
+          Users can navigate to the Hotel Booking section by clicking on the "Hotel Booking" option in the main menu. Once there, they can explore different search options and find available hotels tailored to their preferences.
+        </p>
+        <img
+          src={HotelNavigationImage}
+          alt="Hotel Booking Navigation"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
 
         <h3>Searching for Hotels</h3>
-        <h4>Step 1: Enter Travel Details</h4>
-        <p>Fill out the search form with:</p>
-        <ul>
-          <li><strong>Destination:</strong> Select the location.</li>
-          <li><strong>Check-in/Check-out Dates:</strong> Choose your stay dates.</li>
-          <li><strong>Number of Guests:</strong> Select the number of guests.</li>
-        </ul>
-
-        <h4>Step 2: View Available Hotels</h4>
-        <p>A list of hotels will be shown with details like hotel name, location, room types, and price per night.</p>
-
-        <h4>Step 3: Select Room Type</h4>
-        <p>Choose a room type and check pricing.</p>
+        <p>
+          To begin the hotel booking process, follow these steps:
+        </p>
+        <ol>
+          <li>
+            <strong>Enter Travel Details:</strong> Input the destination, check-in and check-out dates, and the number of guests. The system will then narrow down search results based on these criteria.
+          </li>
+          <li>
+            <strong>View Available Hotels:</strong> A list of available hotels will appear with details such as the hotel's name, location, room types, and price per night. Each hotel is accompanied by a detailed description to help users make an informed decision.
+          </li>
+          <li>
+            <strong>Select Room Type:</strong> Once you find the right hotel, select the room type that best fits your needs. This may include single, double, suite, or family rooms, with options to add extra amenities.
+          </li>
+          <li>
+            <strong>Proceed with Booking:</strong> After selecting the desired room, proceed with filling in personal details, including your name, contact information, and payment details. Once confirmed, your booking will be processed and an email confirmation will be sent.
+          </li>
+        </ol>
+        <img
+          src={HotelSearchImage}
+          alt="Hotel Search Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* Code Snippet Example */}
       <section>
-        <h2>Booking Hotel Rooms</h2>
-        <h4>Step 1: Provide Guest Information</h4>
-        <ul>
-          <li><strong>Full Name</strong></li>
-          <li><strong>Email Address</strong></li>
-          <li><strong>Phone Number</strong></li>
-          <li><strong>Special Requests (Optional)</strong></li>
-        </ul>
-
-        <h4>Step 2: Select Room Preferences</h4>
-        <p>Choose your room and review amenities.</p>
-
-        <h4>Step 3: Payment</h4>
-        <p>Complete payment using methods like Credit Card, Debit Card, Net Banking, or Digital Wallets.</p>
-
-        <h4>Step 4: Booking Confirmation</h4>
-        <p>Receive booking confirmation via email or SMS.</p>
+        <h2>Code Snippet Example</h2>
+        <p>
+          Below is an example code snippet for a simple React component implementing a hotel booking form where users can submit their details to book a room:
+        </p>
+        <CodeBlock language="javascript" code={sampleCode} />
+        <p>
+          In the example above, we define a basic form using React's `useState` to manage the input values for guest name, email, and check-in/check-out dates. Once the user submits the form, an alert is displayed confirming their booking.
+        </p>
       </section>
 
-      <section>
-        <h2>Managing Bookings</h2>
-        <h4>View Bookings</h4>
-        <p>Users can view existing bookings in the “My Bookings” section.</p>
-
-        <h4>Cancel or Modify Bookings</h4>
-        <p>Bookings can be canceled or modified, subject to hotel policies.</p>
-
-        <h4>Cancellation Policies</h4>
-        <ul>
-          <li>Free cancellation within 24 hours of booking.</li>
-          <li>Partial refund after 24 hours, depending on the hotel's policy.</li>
-        </ul>
-      </section>
-
+      {/* Technical Specifications */}
       <section>
         <h2>Technical Specifications</h2>
-        <h3>Supported Browsers</h3>
         <ul>
-          <li>Google Chrome</li>
-          <li>Mozilla Firefox</li>
-          <li>Microsoft Edge</li>
-          <li>Safari (for macOS/iOS)</li>
+          <li>
+            <strong>Supported Browsers:</strong> The hotel booking platform supports modern browsers, including Chrome, Firefox, Safari, and Edge. Ensure your browser is up-to-date for the best experience.
+          </li>
+          <li>
+            <strong>System Requirements:</strong> The platform runs optimally on systems with at least 2GB of RAM. A stable internet connection is required to search and book hotels efficiently. The platform is designed to be responsive and accessible across various devices.
+          </li>
+          <li>
+            <strong>Integrations:</strong> The booking system integrates with third-party hotel search APIs, enabling users to access real-time availability and room pricing. It also includes secure payment gateways to complete bookings safely.
+          </li>
         </ul>
-
-        <h3>System Requirements</h3>
-        <ul>
-          <li><strong>Desktop/Laptop:</strong> Windows 10 or higher, macOS</li>
-          <li><strong>Mobile Devices:</strong> iOS 12 or higher, Android 10 or higher</li>
-        </ul>
-
-        <h3>Integrations</h3>
-        <ul>
-          <li><strong>Payment Gateway:</strong> Integrated with Stripe and PayPal.</li>
-          <li><strong>Hotel Database:</strong> Real-time availability fetched from third-party APIs like Booking.com and Agoda.</li>
-        </ul>
+        {/* <img
+          src={SystemRequirementsImage}
+          alt="System Requirements Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        /> */}
       </section>
 
-      <section>
-        <h2>API Documentation (For Developers)</h2>
-        <h4>GET /api/hotels</h4>
-        <pre>
-          <code>
-            {JSON.stringify({
-              location: "Paris",
-              check_in: "2024-12-20",
-              check_out: "2024-12-25",
-              guests: 2
-            }, null, 2)}
-          </code>
-        </pre>
-
-        <h4>POST /api/bookings</h4>
-        <pre>
-          <code>
-            {JSON.stringify({
-              hotel_id: 1,
-              guest_name: "John Doe",
-              email: "johndoe@example.com",
-              payment_method: "credit_card",
-              card_number: "1234-5678-9876-5432"
-            }, null, 2)}
-          </code>
-        </pre>
-      </section>
-
+      {/* Troubleshooting */}
       <section>
         <h2>Troubleshooting</h2>
         <ul>
-          <li><strong>Payment Failures:</strong> Check for card issues or try another method.</li>
-          <li><strong>Booking Errors:</strong> Clear cache or try a different device.</li>
+          <li>
+            <strong>Common Issues:</strong>
+            <ul>
+              <li><strong>Payment failure:</strong> Ensure your internet connection is stable and check your payment details. Try again after refreshing the page.</li>
+              <li><strong>Booking errors:</strong> Double-check travel details, including destination and dates. If the problem persists, clear your browser cache and cookies, then try again.</li>
+              <li><strong>Hotel unavailable:</strong> If a hotel is unavailable, try modifying your travel dates or choose a different hotel from the list.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>FAQs:</strong>
+            <ul>
+              <li>
+                <strong>Q:</strong> Can I modify my booking?<br />
+                <strong>A:</strong> Yes, you can modify your booking through the "Manage Bookings" section. You can update details such as check-in/check-out dates or room type.
+              </li>
+              <li>
+                <strong>Q:</strong> What payment methods are supported?<br />
+                <strong>A:</strong> We accept credit cards, debit cards, and popular digital wallets like PayPal and Google Pay.
+              </li>
+              <li>
+                <strong>Q:</strong> How do I cancel my booking?<br />
+                <strong>A:</strong> You can cancel your booking by accessing your profile and selecting the "Cancel Booking" option. Ensure that you review the cancellation policy before proceeding.
+              </li>
+            </ul>
+          </li>
         </ul>
       </section>
 
-      <section>
-        <h2>FAQs</h2>
-        <h4>Q1: How do I cancel my booking?</h4>
-        <p>Go to the "My Bookings" section to cancel. Check cancellation policy.</p>
-
-        <h4>Q2: Can I change the dates of my booking?</h4>
-        <p>Yes, if allowed by the hotel's policy.</p>
-
-        <h4>Q3: Will I get a refund if I cancel?</h4>
-        <p>Refunds depend on the cancellation policy.</p>
-      </section>
-
+      {/* Contact Information */}
       <section>
         <h2>Contact Information</h2>
-        <p><strong>Customer Support:</strong></p>
-        <ul>
-          <li><strong>Phone:</strong> +1-800-123-4567</li>
-          <li><strong>Email:</strong> support@hotelbooking.com</li>
-          <li><strong>Live Chat:</strong> Available on the website</li>
-        </ul>
+        <p>
+          If you experience any issues or have questions, feel free to reach out to our support team:
+          <ul>
+            <li>Phone: +1-800-123-456</li>
+            <li>Email: support@hotelbooking.com</li>
+            <li>Live Chat: Available 24/7 on the website for immediate assistance</li>
+            <li>Address: 1234 Hotel Avenue, Suite 101, City, State, ZIP</li>
+          </ul>
+        </p>
+        {/* <img
+          src={ContactInformationImage}
+          alt="Contact Information Example"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        /> */}
       </section>
     </div>
   );

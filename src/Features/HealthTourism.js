@@ -1,18 +1,42 @@
 import React from 'react';
 import '../css/HealthTourism.css';
+import CodeBlock from '../pages/CodeBlock';
+
+// Import images
+import HealthTourismImage from '../images/Features/health_tourism_overview.png';
+import TypesImage from '../images/Features/health_tourism_overview.png';
+import FacilitiesImage from '../images/Features/health_tourism_overview.png';
+import TrendsImage from '../images/Features/health_tourism_overview.png';
+import PlanningImage from '../images/Features/health_tourism_overview.png';
 
 const HealthTourism = () => {
+  const trendsExample = `
+{
+  "holistic_wellness": true,
+  "telemedicine": true,
+  "preventive_care": true,
+  "customized_treatment_plans": true
+}
+`;
+
   return (
     <div className="health-tourism-doc">
       <h1>Health Tourism Documentation</h1>
 
+      {/* Overview */}
       <section>
         <h2>Overview</h2>
         <p>
           <strong>Health Tourism</strong>, also known as medical or wellness tourism, involves traveling to another region or country to receive healthcare or wellness treatments. This sector has gained immense popularity as people seek high-quality, cost-effective medical care, alternative therapies, and rejuvenation programs globally.
         </p>
+        <img
+          src={HealthTourismImage}
+          alt="Health Tourism Overview"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* Types of Health Tourism */}
       <section>
         <h2>Types of Health Tourism</h2>
         <ul>
@@ -26,8 +50,14 @@ const HealthTourism = () => {
             <strong>Rehabilitative Tourism:</strong> Travel to specialized rehabilitation centers for physical or psychological recovery.
           </li>
         </ul>
+        <img
+          src={TypesImage}
+          alt="Types of Health Tourism"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* Popular Health Tourism Destinations */}
       <section>
         <h2>Popular Health Tourism Destinations</h2>
         <ul>
@@ -46,6 +76,7 @@ const HealthTourism = () => {
         </ul>
       </section>
 
+      {/* Benefits of Health Tourism */}
       <section>
         <h2>Benefits of Health Tourism</h2>
         <ul>
@@ -56,6 +87,7 @@ const HealthTourism = () => {
         </ul>
       </section>
 
+      {/* Facilities Required for Health Tourism */}
       <section>
         <h2>Facilities Required for Health Tourism</h2>
         <ul>
@@ -72,8 +104,14 @@ const HealthTourism = () => {
             <strong>Post-Treatment Care:</strong> Support for recovery, including physiotherapy or wellness programs.
           </li>
         </ul>
+        <img
+          src={FacilitiesImage}
+          alt="Facilities for Health Tourism"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* Health Tourism Trends */}
       <section>
         <h2>Health Tourism Trends</h2>
         <ul>
@@ -90,8 +128,16 @@ const HealthTourism = () => {
             <strong>Customized Treatment Plans:</strong> Tailored healthcare experiences based on individual needs.
           </li>
         </ul>
+        <img
+          src={TrendsImage}
+          alt="Health Tourism Trends"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
+        <h4>Example of Health Tourism Trends:</h4>
+        <CodeBlock language="json" code={trendsExample} />
       </section>
 
+      {/* Impact of Health Tourism */}
       <section>
         <h2>Impact of Health Tourism</h2>
         <ul>
@@ -107,6 +153,7 @@ const HealthTourism = () => {
         </ul>
       </section>
 
+      {/* Challenges in Health Tourism */}
       <section>
         <h2>Challenges in Health Tourism</h2>
         <ul>
@@ -122,6 +169,7 @@ const HealthTourism = () => {
         </ul>
       </section>
 
+      {/* Planning for Health Tourism */}
       <section>
         <h2>Planning for Health Tourism</h2>
         <ol>
@@ -138,8 +186,14 @@ const HealthTourism = () => {
             <strong>Travel Arrangements:</strong> Ensure proper documentation, visas, and travel insurance.
           </li>
         </ol>
+        <img
+          src={PlanningImage}
+          alt="Planning Health Tourism"
+          style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
+        />
       </section>
 
+      {/* Future of Health Tourism */}
       <section>
         <h2>Future of Health Tourism</h2>
         <p>

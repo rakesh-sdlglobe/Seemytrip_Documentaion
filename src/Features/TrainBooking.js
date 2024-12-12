@@ -2,23 +2,129 @@ import React from "react";
 import "../css/Trainbooking.css";
 import CodeBlock from "../pages/CodeBlock";
 
+// Import local images
+import TrainNavigationImage from "../images/Features/train_navigate.png";
+import TrainSearchImage from "../images/Features/trainsearch_image.png";
+import SystemRequirementsImage from "../images/Features/systemrequirements_image.png";
+// import ContactInformationImage from "../images/Features/train_navigate.png";
+
 const TrainSectionDocumentation = () => {
-  const sampleCode = `
-import React, { useState } from 'react';
+  const getStationCode = `
+const connection = require('../utils/database');
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+exports.getStation = (req, res) => {
+    try {
+        const query = \`SELECT id, name FROM \${process.env.DB_NAME}.stations\`;
 
-  return (
-    <div>
-      <p>Current Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
-    </div>
-  );
+        connection.query(query, (error, results) => {
+            if (error) {
+                console.error("Error fetching station details:", error);
+                return res.status(500).json({ error: "Internal Server Error" });
+            }
+            
+            res.status(200).json({ stations: results });
+        });
+    } catch (error) {
+        console.error("Unexpected error fetching station details:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
 };
+  `;
 
-export default Counter;
+  const getTrainsCode = `
+const moment = require('moment');
+const connection = require('../utils/database');
+
+exports.getTrains = async (req, res) => {
+    const { stationId, date } = req.body;
+
+    try {
+        const dayOfWeek = moment(date).format('dddd');
+        
+        connection.query(
+            \`SELECT name FROM \${process.env.DB_NAME}.stations WHERE id = ?\`,
+            [stationId],
+            (error, stationResults) => {
+                if (error) {
+                    console.error("Error fetching station details:", error);
+                    return res.status(500).json({ message: 'Database query error' });
+                }
+
+                if (stationResults.length === 0) {
+                    return res.status(404).json({ message: 'Station not found' });
+                }
+
+                const stationName = stationResults[0].name;              
+
+                const query = \`
+                    SELECT
+                        t.name AS trainName,
+                        t.number AS trainNumber,
+                        t.days AS operatingDays,
+                        r.arrival_time,
+                        r.departure_time,
+                        s1.name AS startStation,
+                        s2.name AS endStation,
+                        TIMEDIFF( r.departure_time , r.arrival_time ) AS duration,
+                        GROUP_CONCAT(s.class ORDER BY s.class) AS seatClasses,  
+                        GROUP_CONCAT(s.available_seats ORDER BY s.class) AS availableSeats,  
+                        GROUP_CONCAT(s.total_seats ORDER BY s.class) AS totalSeats,  
+                        GROUP_CONCAT(s.price ORDER BY s.class) AS price
+                    FROM
+                        \${process.env.DB_NAME}.trains t
+                    JOIN
+                        \${process.env.DB_NAME}.stations s1 ON t.start_station_id = s1.id
+                    JOIN
+                        \${process.env.DB_NAME}.stations s2 ON t.end_station_id = s2.id
+                    JOIN
+                        \${process.env.DB_NAME}.routes r ON r.train_id = t.id
+                    JOIN
+                        \${process.env.DB_NAME}.seats s ON s.train_id = t.id
+                    WHERE
+                        (s1.name = ? OR s2.name = ?)
+                        AND FIND_IN_SET(?, t.days) > 0
+                    GROUP BY
+                        t.id, r.arrival_time, r.departure_time, s1.name, s2.name;
+                \`;
+
+                connection.query(query, [stationName, stationName, dayOfWeek], (err, trainResults) => {
+                    if (err) {
+                        console.error("Error fetching trains:", err);
+                        return res.status(500).json({ message: 'Database query error' });
+                    }
+
+                    if (trainResults.length === 0) {
+                        return res.status(404).json({ message: 'No trains available for the selected station and date' });
+                    }
+
+                    const processedTrains = trainResults.map(train => {
+                        const seatClassesArray = train.seatClasses.split(',');
+                        const availableSeatsArray = train.availableSeats.split(',');
+                        const totalSeatsArray = train.totalSeats.split(',');
+                        const priceArray = train.price.split(',');
+
+                        const seats = seatClassesArray.map((seatClass, index) => ({
+                            seatClass: seatClass.trim(),
+                            availableSeats: parseInt(availableSeatsArray[index], 10),
+                            totalSeats: parseInt(totalSeatsArray[index], 10),
+                            price: parseInt(priceArray[index], 10),
+                        }));
+
+                        return {
+                            ...train,
+                            seats,
+                        };
+                    });
+
+                    res.status(200).json({ trains: processedTrains });
+                });
+            }
+        );
+    } catch (error) {
+        console.error("Unexpected error fetching train details:", error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
   `;
 
   return (
@@ -49,7 +155,7 @@ export default Counter;
           <strong>Example:</strong>
           <br />
           <img
-            src="https://via.placeholder.com/800x400.png?text=Train+Section+Navigation+Example"
+            src={TrainNavigationImage}
             alt="Train Section Navigation"
             style={{ maxWidth: "100%", height: "auto" }}
           />
@@ -72,7 +178,7 @@ export default Counter;
           </li>
         </ol>
         <img
-          src="https://via.placeholder.com/800x400.png?text=Train+Search+Example"
+          src={TrainSearchImage}
           alt="Train Search Example"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
         />
@@ -80,11 +186,18 @@ export default Counter;
 
       {/* Code Snippet Example */}
       <section>
-        <h2>Code Snippet Example</h2>
+        <h2>Code Snippets</h2>
+        <h3>Fetching Stations (getStation)</h3>
         <p>
-          Below is an example code snippet for a React component that implements a simple counter:
+          Below is the code snippet to fetch stations from the database:
         </p>
-        <CodeBlock language="javascript" code={sampleCode} />
+        <CodeBlock language="javascript" code={getStationCode} />
+
+        <h3>Fetching Trains (getTrains)</h3>
+        <p>
+          Below is the code snippet to fetch trains from the database based on station and date:
+        </p>
+        <CodeBlock language="javascript" code={getTrainsCode} />
       </section>
 
       {/* Technical Specifications */}
@@ -104,7 +217,7 @@ export default Counter;
           </li>
         </ul>
         <img
-          src="https://via.placeholder.com/800x400.png?text=System+Requirements+Example"
+          src={SystemRequirementsImage}
           alt="System Requirements Example"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
         />
@@ -146,16 +259,15 @@ export default Counter;
         <p>
           For support, reach out via:
           <ul>
-            <li>Phone: +1-800-123-456</li>
-            <li>Email: support@trainservice.com</li>
-            <li>Live Chat: Available on the website</li>
+            <li>Support Email: support@trainbookings.com</li>
+            <li>Phone: +1-800-123-4567</li>
           </ul>
         </p>
-        <img
-          src="https://via.placeholder.com/800x400.png?text=Contact+Information+Example"
-          alt="Contact Information Example"
+        {/* <img
+          src={ContactInformationImage}
+          alt="Contact Information"
           style={{ maxWidth: "100%", height: "auto", margin: "20px 0" }}
-        />
+        /> */}
       </section>
     </div>
   );

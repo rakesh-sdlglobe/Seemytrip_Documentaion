@@ -90,7 +90,7 @@ const BookingConfirmation = () => {
           If you need help with your booking or any changes, our customer support team is available to assist you:
         </p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></li>
+          <li><strong>Email:</strong> <a href="mailto:support@seemytrip.com">support@seemytrip.com</a></li>
           <li><strong>Phone:</strong> +1-800-123-4567</li>
           <li><strong>Live Chat:</strong> Available on the bottom-right corner of the page for immediate assistance.</li>
         </ul>
