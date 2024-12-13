@@ -176,7 +176,7 @@ GET /api/flights
 
       <h3>Key Integrations</h3>
       <ul>
-        <li>Payment Gateway: Integrated with Stripe for secure payments.</li>
+        <li>Payment Gateway: Integrated with UPI and VISA for secure payments.</li>
         <li>Flight Data: Uses third-party APIs for real-time flight availability.</li>
       </ul>
     </div>
