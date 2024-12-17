@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, {useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -32,9 +32,26 @@ import SearchFilterOptions  from './UserFlow/SearchFilterOptions';
 import BookingProcess  from './UserFlow/BookingProcess';
 import PaymentMethod  from './UserFlow/PaymentMethod';
 import BookingConfirmation   from './UserFlow/BookingConfirmation';
+import LoginPage from './components/LoginPage'; // Import your LoginPage
 import './App.css';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+
+  // Function to handle login (could integrate real authentication here)
+  const handleLogin = (email, password) => {
+    // Replace with actual authentication logic
+    if (email === 'admin@example.com' && password === '123') {
+      setIsLoggedIn(true); // Set login state to true
+    } else {
+      alert('Invalid login credentials');
+    }
+  };
+
+  // If not logged in, render only the LoginPage
+  if (!isLoggedIn) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
   return (
     <Router>
       <div className="container">
